@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width">
+   <title>Alexander Wilden</title>
+  <style>
+    .testarea {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255,0,0,0.5);
+    }
+  </style>
+  <script>
+    function handleTouchstart() {
+      console.log('start');
+    }
+
+    function handleTouchmove() {
+      console.log('move');
+    }
+  </script>
+</head>
+<body>
+  <code id="out"></code>
+  <div class="testarea" ontouchstart="handleTouchstart" ontouchmove="handleTouchmove"></div>
+</body>
+</html>
