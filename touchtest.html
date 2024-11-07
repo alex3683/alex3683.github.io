@@ -17,11 +17,17 @@
   <script>
     function handleTouchstart() {
       console.log('start');
+       writeLine('start');
     }
 
-    function handleTouchmove() {
+    function handleTouchmove(event) {
       console.log('move');
+       writeLine('move ' + event.changedTouches.length);
     }
+
+     function writeLine(text) {
+         document.getElementById('out').innerHTML += text + '<br>';
+     }
   </script>
 </head>
 <body>
