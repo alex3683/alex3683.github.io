@@ -26,7 +26,7 @@
             writeLine('start');
          });
          testarea.addEventListener('touchmove', function (event) {
-            console.log('move');
+            console.log('move', event.changedTouches);
             writeLine('move ' + event.changedTouches.length);
          });
      }
