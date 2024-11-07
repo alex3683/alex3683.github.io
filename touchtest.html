@@ -5,7 +5,7 @@
    <meta name="viewport" content="width=device-width">
    <title>Alexander Wilden</title>
   <style>
-    .testarea {
+    #testarea {
       position: fixed;
       top: 0;
       left: 0;
@@ -15,23 +15,25 @@
     }
   </style>
   <script>
-    function handleTouchstart() {
-      console.log('start');
-       writeLine('start');
-    }
-
-    function handleTouchmove(event) {
-      console.log('move');
-       writeLine('move ' + event.changedTouches.length);
-    }
-
      function writeLine(text) {
          document.getElementById('out').innerHTML += text + '<br>';
+     }
+
+     window.onload = function() {
+         var testarea = document.getElementById('testarea');
+         testarea.addEventListener('touchstart', function () {
+            console.log('start');
+            writeLine('start');
+         });
+         testarea.addEventListener('touchmove', function (event) {
+            console.log('move');
+            writeLine('move ' + event.changedTouches.length);
+         });
      }
   </script>
 </head>
 <body>
   <code id="out"></code>
-  <div class="testarea" ontouchstart="handleTouchstart" ontouchmove="handleTouchmove"></div>
+  <div id="testarea"></div>
 </body>
 </html>
